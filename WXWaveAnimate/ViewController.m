@@ -48,13 +48,6 @@
     [self.discriptionLabel setFont:[UIFont fontWithName:@"Futura-CondensedMedium" size:25]];
     
     [self.view addSubview:self.discriptionLabel];
-    
-//    echo "# TEST" >> README.md
-//    git init
-//    git add README.md
-//    git commit -m "first commit"
-//    git remote add origin https://MeowWang:wxlwxl123@github.com/MeowWang/TEST.git
-//    git push -u origin master
 }
 
 - (void)addTextfield
