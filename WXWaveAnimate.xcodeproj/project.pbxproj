@@ -15,6 +15,9 @@
 		294B032B1B85B391004E1258 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 294B03291B85B391004E1258 /* LaunchScreen.xib */; };
 		294B03371B85B391004E1258 /* WXWaveAnimateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B03361B85B391004E1258 /* WXWaveAnimateTests.m */; };
 		294B03421B85FC7A004E1258 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B03411B85FC7A004E1258 /* TableViewController.m */; };
+		2980CC111B8AB5910054C441 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2980CC101B8AB5910054C441 /* TableViewCell.m */; };
+		2980CC141B8ABEAB0054C441 /* fb_rotation.png in Resources */ = {isa = PBXBuildFile; fileRef = 2980CC121B8ABEAB0054C441 /* fb_rotation.png */; };
+		2980CC151B8ABEAB0054C441 /* fb_wave.png in Resources */ = {isa = PBXBuildFile; fileRef = 2980CC131B8ABEAB0054C441 /* fb_wave.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +46,10 @@
 		294B03361B85B391004E1258 /* WXWaveAnimateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXWaveAnimateTests.m; sourceTree = "<group>"; };
 		294B03401B85FC7A004E1258 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		294B03411B85FC7A004E1258 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		2980CC0F1B8AB5910054C441 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		2980CC101B8AB5910054C441 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		2980CC121B8ABEAB0054C441 /* fb_rotation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb_rotation.png; sourceTree = SOURCE_ROOT; };
+		2980CC131B8ABEAB0054C441 /* fb_wave.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb_wave.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,12 +91,16 @@
 		294B03191B85B391004E1258 /* WXWaveAnimate */ = {
 			isa = PBXGroup;
 			children = (
+				2980CC121B8ABEAB0054C441 /* fb_rotation.png */,
+				2980CC131B8ABEAB0054C441 /* fb_wave.png */,
 				294B031E1B85B391004E1258 /* AppDelegate.h */,
 				294B031F1B85B391004E1258 /* AppDelegate.m */,
 				294B03211B85B391004E1258 /* ViewController.h */,
 				294B03221B85B391004E1258 /* ViewController.m */,
 				294B03401B85FC7A004E1258 /* TableViewController.h */,
 				294B03411B85FC7A004E1258 /* TableViewController.m */,
+				2980CC0F1B8AB5910054C441 /* TableViewCell.h */,
+				2980CC101B8AB5910054C441 /* TableViewCell.m */,
 				294B03241B85B391004E1258 /* Main.storyboard */,
 				294B03271B85B391004E1258 /* Images.xcassets */,
 				294B03291B85B391004E1258 /* LaunchScreen.xib */,
@@ -204,7 +215,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2980CC151B8ABEAB0054C441 /* fb_wave.png in Resources */,
 				294B03261B85B391004E1258 /* Main.storyboard in Resources */,
+				2980CC141B8ABEAB0054C441 /* fb_rotation.png in Resources */,
 				294B032B1B85B391004E1258 /* LaunchScreen.xib in Resources */,
 				294B03281B85B391004E1258 /* Images.xcassets in Resources */,
 			);
@@ -227,6 +240,7 @@
 				294B03231B85B391004E1258 /* ViewController.m in Sources */,
 				294B03201B85B391004E1258 /* AppDelegate.m in Sources */,
 				294B031D1B85B391004E1258 /* main.m in Sources */,
+				2980CC111B8AB5910054C441 /* TableViewCell.m in Sources */,
 				294B03421B85FC7A004E1258 /* TableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +438,7 @@
 				294B033C1B85B391004E1258 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		294B033D1B85B391004E1258 /* Build configuration list for PBXNativeTarget "WXWaveAnimateTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +447,7 @@
 				294B033F1B85B391004E1258 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

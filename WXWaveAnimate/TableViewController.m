@@ -8,7 +8,13 @@
 
 #import "TableViewController.h"
 
+#define kCellHeight     [UIScreen mainScreen].bounds.size.height/4
+
 @interface TableViewController ()
+@property (nonatomic, strong)TableViewCell *cell0;
+@property (nonatomic, strong)TableViewCell *cell1;
+@property (nonatomic, strong)TableViewCell *cell2;
+@property (nonatomic, strong)TableViewCell *cell3;
 
 @end
 
@@ -30,7 +36,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -64,11 +70,42 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
-    
-    
-    
-    return cell;
+    switch (indexPath.row) {
+        case 0:
+            if (!self.cell0) {
+                self.cell0 = [[TableViewCell alloc]initWithType:0 withFrame:CGRectMake(0, 0, self.tableView.frame.size.width, kCellHeight)];
+//                [self.cell0 setBackgroundColor:[UIColor blueColor]];
+            }
+            return self.cell0;
+            break;
+        case 1:
+            if (!self.cell1) {
+                self.cell1 = [[TableViewCell alloc]initWithType:1 withFrame:CGRectMake(0, 0, self.tableView.frame.size.width, kCellHeight)];
+            }
+            return self.cell1;
+            break;
+        case 2:
+            if (!self.cell2) {
+                self.cell2 = [[TableViewCell alloc]initWithType:2 withFrame:CGRectMake(0, 0, self.tableView.frame.size.width, kCellHeight)];
+            }
+            return self.cell2;
+            break;
+        case 3:
+            if (!self.cell3) {
+                self.cell3 = [[TableViewCell alloc]initWithType:3 withFrame:CGRectMake(0, 0, self.tableView.frame.size.width, kCellHeight)];
+            }
+            return self.cell3;
+            break;
+            
+        default:
+            break;
+    }
+    return nil;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return kCellHeight;
 }
 
 

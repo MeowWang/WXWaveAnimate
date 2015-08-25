@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#define KBackgroundColor [UIColor colorWithRed:53/255.0 green:188/255.0 blue:167/255.0 alpha:1]
+#import "TableViewCell.h"
 
 @interface TableViewController : UITableViewController
 
