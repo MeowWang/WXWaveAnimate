@@ -35,15 +35,32 @@
     self.waveView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"fb_wave.png"]];
     [self.waveView setFrame:CGRectMake(0, 0, self.rotateView.frame.size.width-11, self.rotateView.frame.size.width-11)];
     [self.waveView.layer setPosition:CGPointMake(self.rotateView.frame.size.width/2, self.rotateView.frame.size.height/2)];
-    NSLog(@"%f,%f",self.rotateView.center.x,self.rotateView.center.y);
-    NSLog(@"%@",NSStringFromCGRect(self.rotateView.bounds));
-//    [self.waveView setCenter:self.rotateView.center];
     [self.waveView.layer setCornerRadius:self.waveView.frame.size.width/2];
     [self.waveView setClipsToBounds:YES];
+    self.waveView.alpha = self.waveAlpha;
     [self.waveView setBackgroundColor:[UIColor clearColor]];
-    [self.waveView setAlpha:0.5];
     [self.rotateView addSubview:self.waveView];
+    
+    UILabel *percentLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.rotateView.frame.size.width, self.rotateView.frame.size.width/3 -3)];
+    [percentLabel setCenter:CGPointMake(self.rotateView.frame.size.width/2, self.rotateView.frame.size.height/2)];
+    percentLabel.font = [UIFont fontWithName:nil size:percentLabel.frame.size.height - 4];
+    percentLabel.textAlignment = NSTextAlignmentCenter;
+    percentLabel.text = [NSString stringWithFormat:@"%d%%",self.percent];
+    percentLabel.textColor = self.textColor;
+    [self.rotateView addSubview:percentLabel];
+    UILabel *txtLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(percentLabel.frame) + 2, self.rotateView.frame.size.width/2, self.rotateView.frame.size.width/6)];
+    [txtLabel setCenter:CGPointMake(self.rotateView.frame.size.width/2, txtLabel.center.y)];
+    txtLabel.font = [UIFont fontWithName:nil size:txtLabel.frame.size.height - 8];
+    txtLabel.textAlignment = NSTextAlignmentCenter;
+//    [txtLabel setBackgroundColor:[UIColor blueColor]];
+    txtLabel.text = @"总评分";
+    txtLabel.textColor = self.textColor;
+    [self.rotateView addSubview:txtLabel];
+    [self addAnimation];
+}
 
+- (void)addAnimation
+{
     switch (self.type) {
         case 0:
             
@@ -57,6 +74,7 @@
         case 3:
             
             break;
+            
         default:
             break;
     }

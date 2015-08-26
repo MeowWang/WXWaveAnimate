@@ -11,6 +11,9 @@
 #define kCellHeight     [UIScreen mainScreen].bounds.size.height/4
 
 @interface TableViewController ()
+{
+    int _percent;
+}
 @property (nonatomic, strong)TableViewCell *cell0;
 @property (nonatomic, strong)TableViewCell *cell1;
 @property (nonatomic, strong)TableViewCell *cell2;
@@ -50,11 +53,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)setPercent:(int)percent
-{
-    
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -76,24 +74,28 @@
                 self.cell0 = [[TableViewCell alloc]initWithType:0 withFrame:CGRectMake(0, 0, self.tableView.frame.size.width, kCellHeight)];
 //                [self.cell0 setBackgroundColor:[UIColor blueColor]];
             }
+            self.cell0.percent = self.percent;
             return self.cell0;
             break;
         case 1:
             if (!self.cell1) {
                 self.cell1 = [[TableViewCell alloc]initWithType:1 withFrame:CGRectMake(0, 0, self.tableView.frame.size.width, kCellHeight)];
             }
+            self.cell1.percent = self.percent;
             return self.cell1;
             break;
         case 2:
             if (!self.cell2) {
                 self.cell2 = [[TableViewCell alloc]initWithType:2 withFrame:CGRectMake(0, 0, self.tableView.frame.size.width, kCellHeight)];
             }
+            self.cell2.percent = self.percent;
             return self.cell2;
             break;
         case 3:
             if (!self.cell3) {
                 self.cell3 = [[TableViewCell alloc]initWithType:3 withFrame:CGRectMake(0, 0, self.tableView.frame.size.width, kCellHeight)];
             }
+            self.cell3.percent = self.percent;
             return self.cell3;
             break;
             

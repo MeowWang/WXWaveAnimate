@@ -10,7 +10,6 @@
 #import "TableViewCell.h"
 
 @interface TableViewController : UITableViewController
-
-- (void)setPercent:(int)percent;
+@property (nonatomic, assign)int percent;
 
 @end
