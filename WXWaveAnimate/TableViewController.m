@@ -75,6 +75,10 @@
 //                [self.cell0 setBackgroundColor:[UIColor blueColor]];
             }
             self.cell0.percent = self.percent;
+            self.cell0.animationLevelType = AnimationLevelType_KeepRoll;
+            self.cell0.animationStraightType = AnimationStraightType_RiseUpStraight;
+            self.cell0.waveAlpha = 1;
+            self.cell0.textColor = [UIColor orangeColor];
             return self.cell0;
             break;
         case 1:
@@ -82,6 +86,10 @@
                 self.cell1 = [[TableViewCell alloc]initWithType:1 withFrame:CGRectMake(0, 0, self.tableView.frame.size.width, kCellHeight)];
             }
             self.cell1.percent = self.percent;
+            self.cell1.animationLevelType = AnimationLevelType_KeepRoll;
+            self.cell1.animationStraightType = AnimationStraightType_RiseUpStraight;
+            self.cell1.waveAlpha = 0.8;
+            self.cell1.textColor = [UIColor colorWithRed:28/255.0 green:125/255.0 blue:115/255.0 alpha:1];
             return self.cell1;
             break;
         case 2:
@@ -89,6 +97,10 @@
                 self.cell2 = [[TableViewCell alloc]initWithType:2 withFrame:CGRectMake(0, 0, self.tableView.frame.size.width, kCellHeight)];
             }
             self.cell2.percent = self.percent;
+            self.cell2.animationLevelType = AnimationLevelType_KeepRoll;
+            self.cell2.animationStraightType = AnimationStraightType_RiseUpStraight;
+            self.cell2.waveAlpha = 0.5;
+            self.cell2.textColor = [UIColor whiteColor];
             return self.cell2;
             break;
         case 3:
@@ -96,6 +108,10 @@
                 self.cell3 = [[TableViewCell alloc]initWithType:3 withFrame:CGRectMake(0, 0, self.tableView.frame.size.width, kCellHeight)];
             }
             self.cell3.percent = self.percent;
+            self.cell3.animationLevelType = AnimationLevelType_KeepRoll;
+            self.cell3.animationStraightType = AnimationStraightType_RiseUpStraight;
+            self.cell3.waveAlpha = 0.3;
+            self.cell3.textColor = [UIColor whiteColor];
             return self.cell3;
             break;
             

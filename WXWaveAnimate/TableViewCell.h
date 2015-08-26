@@ -25,10 +25,15 @@ typedef enum
 @property (nonatomic, strong)UIImageView *rotateView;
 @property (nonatomic, strong)UIImageView *waveView;
 @property (nonatomic, strong)UIColor *textColor;
-@property (nonatomic, assign)int animationType;
+@property (nonatomic, assign)AnimationStraightType animationStraightType;
+@property (nonatomic, assign)AnimationLevelType animationLevelType;
 @property (nonatomic, assign)int percent;
 @property (nonatomic, assign)double waveAlpha;
+@property (nonatomic, strong)UILabel *percentLabel;
+@property (nonatomic, strong)UILabel *txtLabel;
+@property (nonatomic, assign)BOOL willRotationStop;
 
 - (instancetype)initWithType:(int)type withFrame:(CGRect)frame;
+- (void)beginAnimation;
 
 @end

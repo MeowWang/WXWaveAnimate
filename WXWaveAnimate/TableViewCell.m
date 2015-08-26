@@ -15,11 +15,32 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self setFrame:frame];
-        self.type = type;
+//        self.type = type;
         self.backgroundColor = KBackgroundColor;
         [self setUpUI];
     }
     return self;
+}
+
+- (void)setWaveAlpha:(double)waveAlpha
+{
+    _waveAlpha = waveAlpha;
+    self.waveView.alpha = waveAlpha;
+}
+
+- (void)setTextColor:(UIColor *)textColor
+{
+    if (_textColor != textColor) {
+        _textColor = textColor;
+    }
+    self.percentLabel.textColor = textColor;
+    self.txtLabel.textColor = textColor;
+}
+
+- (void)setPercent:(int)percent
+{
+    _percent = percent;
+    self.percentLabel.text = [NSString stringWithFormat:@"%d%%",percent];
 }
 
 - (void)setUpUI
@@ -41,43 +62,45 @@
     [self.waveView setBackgroundColor:[UIColor clearColor]];
     [self.rotateView addSubview:self.waveView];
     
-    UILabel *percentLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.rotateView.frame.size.width, self.rotateView.frame.size.width/3 -3)];
-    [percentLabel setCenter:CGPointMake(self.rotateView.frame.size.width/2, self.rotateView.frame.size.height/2)];
-    percentLabel.font = [UIFont fontWithName:nil size:percentLabel.frame.size.height - 4];
-    percentLabel.textAlignment = NSTextAlignmentCenter;
-    percentLabel.text = [NSString stringWithFormat:@"%d%%",self.percent];
-    percentLabel.textColor = self.textColor;
-    [self.rotateView addSubview:percentLabel];
-    UILabel *txtLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(percentLabel.frame) + 2, self.rotateView.frame.size.width/2, self.rotateView.frame.size.width/6)];
-    [txtLabel setCenter:CGPointMake(self.rotateView.frame.size.width/2, txtLabel.center.y)];
-    txtLabel.font = [UIFont fontWithName:nil size:txtLabel.frame.size.height - 8];
-    txtLabel.textAlignment = NSTextAlignmentCenter;
+    self.percentLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.rotateView.frame.size.width, self.rotateView.frame.size.width/3 -3)];
+    [self.percentLabel setCenter:CGPointMake(self.rotateView.frame.size.width/2, self.rotateView.frame.size.height/2)];
+    self.percentLabel.font = [UIFont systemFontOfSize:self.percentLabel.frame.size.height - 7 weight:0.5]; //[UIFont fontWithName:nil size:self.percentLabel.frame.size.height - 7];
+    self.percentLabel.textAlignment = NSTextAlignmentCenter;
+    self.percentLabel.text = [NSString stringWithFormat:@"%d%%",self.percent];
+    
+    [self.rotateView addSubview:self.percentLabel];
+    self.txtLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.percentLabel.frame), self.rotateView.frame.size.width/2, self.rotateView.frame.size.width/6)];
+    [self.txtLabel setCenter:CGPointMake(self.rotateView.frame.size.width/2, self.txtLabel.center.y)];
+    self.txtLabel.font = [UIFont fontWithName:nil size:self.txtLabel.frame.size.height - 8];
+    self.txtLabel.textAlignment = NSTextAlignmentCenter;
 //    [txtLabel setBackgroundColor:[UIColor blueColor]];
-    txtLabel.text = @"总评分";
-    txtLabel.textColor = self.textColor;
-    [self.rotateView addSubview:txtLabel];
+    self.txtLabel.text = @"总评分";
+    [self.rotateView addSubview:self.txtLabel];
     [self addAnimation];
 }
 
 - (void)addAnimation
 {
-    switch (self.type) {
-        case 0:
-            
-            break;
-        case 1:
-            
-            break;
-        case 2:
-            
-            break;
-        case 3:
-            
-            break;
-            
-        default:
-            break;
+    if (self.animationLevelType == AnimationLevelType_KeepRoll) {
+        
     }
+    else
+    {
+        
+    }
+    
+    if (self.animationStraightType == AnimationStraightType_RiseUpStraight) {
+        
+    }
+    else
+    {
+        
+    }
+}
+
+- (void)beginAnimation
+{
+    
 }
 
 
