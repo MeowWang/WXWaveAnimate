@@ -33,12 +33,15 @@
     [self addSubview:self.rotateView];
     
     self.waveView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"fb_wave.png"]];
-    [self.waveView setFrame:CGRectMake(0, 0, self.rotateView.frame.size.width-4, self.rotateView.frame.size.width-4)];
-    [self.waveView.layer setPosition:self.rotateView.center];
+    [self.waveView setFrame:CGRectMake(0, 0, self.rotateView.frame.size.width-11, self.rotateView.frame.size.width-11)];
+    [self.waveView.layer setPosition:CGPointMake(self.rotateView.frame.size.width/2, self.rotateView.frame.size.height/2)];
+    NSLog(@"%f,%f",self.rotateView.center.x,self.rotateView.center.y);
+    NSLog(@"%@",NSStringFromCGRect(self.rotateView.bounds));
 //    [self.waveView setCenter:self.rotateView.center];
     [self.waveView.layer setCornerRadius:self.waveView.frame.size.width/2];
     [self.waveView setClipsToBounds:YES];
     [self.waveView setBackgroundColor:[UIColor clearColor]];
+    [self.waveView setAlpha:0.5];
     [self.rotateView addSubview:self.waveView];
 
     switch (self.type) {
