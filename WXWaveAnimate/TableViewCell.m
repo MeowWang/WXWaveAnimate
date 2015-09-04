@@ -81,6 +81,8 @@
 
 - (void)addAnimation
 {
+    CABasicAnimation *levelAnimation = [CABasicAnimation animationWithKeyPath:@"position.x"];
+    CABasicAnimation *straightAnimation = [CABasicAnimation animationWithKeyPath:@"position.y"];
     if (self.animationLevelType == AnimationLevelType_KeepRoll) {
         
     }

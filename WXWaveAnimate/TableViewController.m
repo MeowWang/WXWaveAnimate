@@ -48,6 +48,22 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    if (self.cell0) {
+        [self.cell0 addAnimation];
+    }
+    if (self.cell1) {
+        [self.cell1 addAnimation];
+    }
+    if (self.cell2) {
+        [self.cell2 addAnimation];
+    }
+    if (self.cell3) {
+        [self.cell3 addAnimation];
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

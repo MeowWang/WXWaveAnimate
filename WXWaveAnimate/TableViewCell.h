@@ -34,6 +34,6 @@ typedef enum
 @property (nonatomic, assign)BOOL willRotationStop;
 
 - (instancetype)initWithType:(int)type withFrame:(CGRect)frame;
-- (void)beginAnimation;
+- (void)addAnimation;
 
 @end
